@@ -1,0 +1,54 @@
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+.image-container {
+    flex: 1;
+}
+
+.logo-footer-img {
+    max-width: 100%;
+    /* Keep the image responsive */
+    max-height: 100%;
+    /* Increase the maximum height */
+    width: auto;
+    /* Ensure the width adjusts accordingly */
+    height: auto;
+    /* Ensure the height adjusts accordingly */
+}
+
+
+/* Additional styling for mobile */
+
+@media (max-width: 500px) {
+    .about-container {
+        display: block;
+    }
+    .text-container {
+        display: block;
+        margin-left: auto;
+        width: fit-content;
+        margin-right: auto;
+    }
+    .image-container {
+        margin-top: 1rem;
+        display: block;
+        margin-left: auto;
+        width: fit-content;
+        margin-right: auto;
+    }
+}

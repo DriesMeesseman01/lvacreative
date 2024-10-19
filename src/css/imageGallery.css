@@ -1,0 +1,143 @@
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 2fr);
+    grid-gap: 1rem;
+    padding: 1rem 5rem;
+}
+
+.image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+.image:nth-child(3n + 1) {
+    grid-area: span 2/span 2;
+}
+
+.image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+    display: block;
+    width: fit-content;
+    margin: auto 5rem 1rem auto;
+}
+
+.paginationBtn {
+    color: black;
+}
+
+.fullscreen-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.fullscreen-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.photoGenresBtn {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 15px;
+    padding: 1rem;
+    transition: 0.2s;
+    background-color: #00326d;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.paginateBtn {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    letter-spacing: 0.1rem;
+    font-size: 15px;
+    padding: 5px;
+    transition: 0.2s;
+    background-color: #00326d;
+	min-width: 50px;
+	max-width: 50px;
+	min-height: 50px;
+	max-height: 50px;
+	margin: 0.5rem;
+}
+
+.selected {
+    color: #00326d;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.photoGenresBlock {
+    display: "block";
+    margin-left: 5rem;
+    width: fit-content;
+}
+
+@media (max-width: 500px) {
+    .gallery {
+        display: block;
+        /* Display images stacked under each other */
+        padding: 1rem 0;
+        /* Adjust padding as needed */
+    }
+    .image {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: 80%;
+        height: 80%;
+        margin-bottom: 1rem;
+    }
+    .pagination {
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .photoGenresBtn {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+    .photoGenresBlock {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: fit-content;
+    }
+}

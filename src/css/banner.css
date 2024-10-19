@@ -1,0 +1,183 @@
+.banner {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.banner-background {
+    width: 100%;
+    height: 60vh;
+}
+
+.centered {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo-banner {
+    width: 65%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.banner-title {
+    position: relative;
+    font-family: logo, serif;
+    font-weight: bold;
+    font-size: 10rem;
+    line-height: 0;
+    margin: 0;
+}
+
+.banner-cta {
+    display: flex;
+    justify-content: center;
+}
+
+.navigationBtn {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 1rem 3rem;
+    transition: 0.2s;
+    background-color: transparent;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+    border: 1px solid #ccd0cd;
+}
+
+.navigationBtn:hover {
+    letter-spacing: 0.2rem;
+    background: #ffffff;
+    color: #000;
+    box-shadow: 0 0 35px #1B425E;
+    animation: box 3s infinite;
+    cursor: pointer;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background-color: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.navigationBtn span {
+    position: relative;
+    z-index: 1;
+}
+
+.navigationBtn i {
+    position: absolute;
+    inset: 0;
+    display: block;
+}
+
+.navigationBtn i::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 80%;
+    top: -2px;
+    border: 2px solid #1B425E;
+    background: #1B425E;
+    transition: 0.2s;
+}
+
+.navigationBtn:hover i::before {
+    width: 15px;
+    left: 20%;
+    animation: move 3s infinite;
+}
+
+.navigationBtn i::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    left: 20%;
+    bottom: -2px;
+    border: 2px solid #1B425E;
+    background: #1B425E;
+    transition: 0.2s;
+}
+
+.navigationBtn:hover i::after {
+    width: 15px;
+    left: 80%;
+    animation: move 3s infinite;
+}
+
+@keyframes move {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes box {
+    0% {
+        box-shadow: #27272c;
+    }
+    50% {
+        box-shadow: 0 0 25px #1B425E;
+    }
+    100% {
+        box-shadow: #27272c;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.drop-in {
+    animation: drop-in 2s ease 200ms backwards;
+}
+
+.drop-in-2 {
+    animation: drop-in 3s ease 500ms backwards;
+}
+
+@keyframes drop-in {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .logo-banner {
+        width: 70%;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    .banner-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigationBtn {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
